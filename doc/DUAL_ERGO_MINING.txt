@@ -1,16 +1,18 @@
 Team Red Miner Dual Coin ERGO Mining
 ====================================
 
+2024-04-06 Updated with alephium info.
 2023-04-19 Updated with ironfish info.
 2023-01-27 Updated with short note about triple mining with zil.
 2022-12-22 Initial version
 
 Overview
 --------
-Supported algos are kaspa and ironfish. To mine ironfish instead of
-kaspa, replace all --kas and --kas_end with --iron and --iron_end
-below. The guide itself is not updated after the initial version
-describing ERG+KAS.
+Supported algos are kaspa, ironfish (old algo), and alephium. To mine
+ironfish instead of kaspa, replace all --kas and --kas_end with 
+--iron and --iron_end below. To mine alephium as the dual algo, replace
+all --kas and --kas_end with --alph and --alph_end. The guide itself is
+not updated after the initial version describing ERG+KAS.
 
 To mine using autolykos2+kaspa (which is the only supported dual
 algo), take a working TRM autolykos2 command line and add a KAS
