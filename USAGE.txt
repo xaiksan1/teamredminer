@@ -1,4 +1,4 @@
-          Team Red Miner version 0.10.18
+          Team Red Miner version 0.10.19
 Usage: teamredminer [OPTIONS]
 Options:
   -a, --algo=ALGORITHM      Selects the mining algorithm.  Currently available:
@@ -14,7 +14,8 @@ Options:
                               kas               (kaspa)
                               karlsen           (karlsen)
                               pyrin             (pyrin)
-                              ironfish          (ironfish)
+                              ironfish          (ironfish old algo)
+                              alph              (alephium)
                               nimiq             (nimiq)
                               lyra2z      
                               phi2              (lux, argoneum)
@@ -692,6 +693,15 @@ Ethash dual mining options:
                               algo.  This argument isn't strictly necessary, but should be included for mining distros since
                               the user has no guarantee what arguments will be added automatically at the end of the command
                               line by the distro.
+      --alph_start or --alph Starts the Alephium dual mining config.  Between this and the --alph_end marker, all arguments are
+                              applied to the Alephium mining rather than the primary algo, typically ethash.  It's expected that
+                              ethash has been set up in earlier arguments.  The intention is that you can add a --alph ... 
+                              --alph_end configuration to any working TRM configuration algo and things will work out of the box.
+
+      --alph_end            Marks that we're done with the Alephium mining config and all following arguments are for the primary
+                              algo.  This argument isn't strictly necessary, but should be included for mining distros since
+                              the user has no guarantee what arguments will be added automatically at the end of the command
+                              line by the distro.
       --karlsen_start or --karlsen Starts the Karlsen dual mining config.  Between this and the --karlsen_end marker, all arguments are
                               applied to the Karlsen mining rather than the primary algo, typically ethash.  It's expected that
                               ethash has been set up in earlier arguments.  The intention is that you can add a --karlsen ... 
@@ -728,14 +738,14 @@ Ethash dual mining options:
                               and added, but as network hashrates and market prices move, new values may need to be provided. 
                               This argument provides three values, all expected to be positive numbers:
                                 X    Score for 1 MH/s of the primary algo (typically ethash). 
-                                Y    Score for 1 MH/s of the secondary algo (typically TON/Kaspa/Ironfish). 
+                                Y    Score for 1 MH/s of the secondary algo (typically TON/Kaspa/Iron/Alph). 
                                 Z    Cost per 1 W of measured power. We recommend setting this to zero for now. 
                               Example for ETH+TON: 
 
-                                Based on manual relative value: each MH/s of ETH is worth 100 MH/s of TON/Kaspa/Ironfish
+                                Based on manual relative value: each MH/s of ETH is worth 100 MH/s of TON/Kaspa/Iron/Alph
                                 --dual_tuner_weights=100:1:0
 
-                                Based on mining calculators: $0.0437 for 1 MH/s ETH, $0.0005476 for 1 MH/s TON/Kaspa/Ironfish
+                                Based on mining calculators: $0.0437 for 1 MH/s ETH, $0.0005476 for 1 MH/s TON/Kaspa/Iron/Alph
                                 --dual_tuner_weights=0.0437:0.0005476:0
 
 Abel options: 

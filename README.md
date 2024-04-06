@@ -1,4 +1,4 @@
-# teamredminer v0.10.18
+# teamredminer v0.10.19
 This is an optimized miner for AMD GPUs and Xilinx FPGAs created by todxx and kerney666.
 
 **Download is available in the [github releases section](https://github.com/todxx/teamredminer/releases).**
@@ -43,6 +43,7 @@ Supported GPU algorithms and their respective dev fees:
 | Verthash                  | 2.0% |
 | Autolykos2                | 2.0% |
 | Ton                       | 1.0% |
+| Alephium                  | 1.0% |
 | Kaspa                     | 1.0% |
 | Karlsen                   | 1.0% |
 | Pyrin                     | 1.0% |
@@ -84,6 +85,7 @@ Some algorithms are not supported on some GPU architectures and/or drivers.  Bel
 | Autolykos2               |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Firopow                  |   N    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Ton                      |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
+| Alephium                 |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Kaspa                    |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Ironfish                 |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Nimiq                    |   N    |  Y   |  Y   |   Y     |   Y  |   N   |
@@ -135,22 +137,26 @@ Supported FPGA algorithms and their respective dev fees:
 | Ethash                    |  4.0% |
 | Kaspa                     | 10.0% |
 | Ironfish                  | 10.0% |
+| Alephium                  | 10.0% |
 
 FPGA device/algo compatibility table:
 
-|                             | Ethash | Kaspa | Ironfish |
-| --------------------------- |:------:|:-----:|:--------:|
-| C1100                       |   Y    |   Y   |    Y     |
-| FK33                        |   Y    |   Y   |    Y     |
-| U50C/ECU50                  |   Y    |   Y   |    Y     |
-| TH53                        |   Y    |   Y   |    Y     |
-| TH53M                       |   N    |   Y   |    Y     |
-| TH55                        |   Y    |   Y   |    Y     |
-| E300 (vu35p_CIV)            |   Y    |   Y   |    Y     |
-| E300 (others)               |   N    |   Y   |    Y     |
-| CVP13                       |   N    |   Y   |    Y     |
-| BCU1525/BTU9P/ECU200/U200   |   N    |   Y   |    Y     |
-| JC33/JC35/JC13 on JCC2L/F   |   N    |   Y   |    Y     |
+|                             | Ethash | Kaspa | Ironfish | Alephium |
+| --------------------------- |:------:|:-----:|:--------:|:--------:|
+| C1100                       |   Y    |   Y   |    Y     |    Y     |
+| FK33                        |   Y    |   Y   |    Y     |    Y     |
+| U50C/ECU50                  |   Y    |   Y   |    Y     |    Y     |
+| TH53                        |   Y    |   Y   |    Y     |    Y     |
+| TH53M                       |   N    |   Y   |    Y     |    Y     |
+| TH55                        |   Y    |   Y   |    Y     |    Y     |
+| E300 (vu35p_CIV)            |   Y    |   Y   |    Y     |    Y     |
+| E300 (vu13p)                |   N    |   Y   |    Y     |    N     |
+| E300 (vu9p)                 |   N    |   Y   |    Y     |    N     |
+| E300 (others)               |   N    |   Y   |    Y     |    Y     |
+| CVP13                       |   N    |   Y   |    Y     |    N     |
+| BCU1525/BTU9P/ECU200/U200   |   N    |   Y   |    Y     |    N     |
+| JC35 on JCC2L/F             |   N    |   Y   |    Y     |    Y     |
+| JC13 on JCC2L/F             |   N    |   Y   |    Y     |    N     |
 
 
 -----------
@@ -166,6 +172,11 @@ For example command lines please see the batch/shell scripts in the miner downlo
 For command line options see the [USAGE.txt](USAGE.txt) file that comes with the miner.
 
 ## Release Notes
+### v0.10.19
+#### Changes
+- GPU:  Added support for alephium for all gpus, including dual mining using --alph .. --alph_end.
+- FPGA: Added support for alephium for most common FPGAs (vu33p and vu35p variants).
+
 ### v0.10.18
 #### Changes
 - GPU:  Added TON/GRAM for RDNA3 gpus. 
