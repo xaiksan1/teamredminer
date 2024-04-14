@@ -1,4 +1,4 @@
-# teamredminer v0.10.19
+# teamredminer v0.10.20
 This is an optimized miner for AMD GPUs and Xilinx FPGAs created by todxx and kerney666.
 
 **Download is available in the [github releases section](https://github.com/todxx/teamredminer/releases).**
@@ -150,13 +150,13 @@ FPGA device/algo compatibility table:
 | TH53M                       |   N    |   Y   |    Y     |    Y     |
 | TH55                        |   Y    |   Y   |    Y     |    Y     |
 | E300 (vu35p_CIV)            |   Y    |   Y   |    Y     |    Y     |
-| E300 (vu13p)                |   N    |   Y   |    Y     |    N     |
+| E300 (vu13p)                |   N    |   Y   |    Y     |    Y     |
 | E300 (vu9p)                 |   N    |   Y   |    Y     |    N     |
 | E300 (others)               |   N    |   Y   |    Y     |    Y     |
-| CVP13                       |   N    |   Y   |    Y     |    N     |
+| CVP13                       |   N    |   Y   |    Y     |    Y     |
 | BCU1525/BTU9P/ECU200/U200   |   N    |   Y   |    Y     |    N     |
 | JC35 on JCC2L/F             |   N    |   Y   |    Y     |    Y     |
-| JC13 on JCC2L/F             |   N    |   Y   |    Y     |    N     |
+| JC13 on JCC2L/F             |   N    |   Y   |    Y     |    Y     |
 
 
 -----------
@@ -172,6 +172,11 @@ For example command lines please see the batch/shell scripts in the miner downlo
 For command line options see the [USAGE.txt](USAGE.txt) file that comes with the miner.
 
 ## Release Notes
+### v0.10.20
+#### Changes
+- FPGA: Added alephium bitstreams for E313, CVP13, and JC13.
+- FPGA: Fixed bug for alephium that could cause a total share outage after a crash+restart for a device.
+
 ### v0.10.19
 #### Changes
 - GPU:  Added support for alephium for all gpus, including dual mining using --alph .. --alph_end.
