@@ -1,4 +1,4 @@
-# teamredminer v0.10.20
+# teamredminer v0.10.21
 This is an optimized miner for AMD GPUs and Xilinx FPGAs created by todxx and kerney666.
 
 **Download is available in the [github releases section](https://github.com/todxx/teamredminer/releases).**
@@ -32,46 +32,49 @@ GPUs supported and tested:
 
 Supported GPU algorithms and their respective dev fees:
 
-|      GPU Algorithm        |  Fee |
-| ------------------------- | ---- |
-| Ethash on Polaris GPUs    | 0.75%|
-| Ethash on all other GPUs  | 1.0% |
-| Kawpow                    | 2.0% |
-| Abel on Polaris, RDNA2/3  | 1.0% |
-| Abel on Vega, Navi10      | 2.0% |
-| Abel on VII, MI50/60/100s | 3.0% |
-| Verthash                  | 2.0% |
-| Autolykos2                | 2.0% |
-| Ton                       | 1.0% |
-| Alephium                  | 1.0% |
-| Kaspa                     | 1.0% |
-| Karlsen                   | 1.0% |
-| Pyrin                     | 1.0% |
-| Ironfish                  | 1.0% |
-| Nimiq                     | 2.5% |
-| Cryptonight R             | 2.5% |
-| Cryptonight v8 upx2       | 2.5% |
-| Cryptonight v8 turtle     | 2.5% |
-| Cryptonight v8 half       | 2.5% |
-| Cryptonight v8 double     | 2.5% |
-| Cryptonight v8 rwz        | 2.5% |
-| Cryptonight v8            | 2.5% |
-| Cryptonight heavy         | 2.5% |
-| Cryptonight haven         | 2.5% |
-| Cryptonight saber         | 2.5% |
-| Cryptonight conceal       | 2.5% |
-| Chukwa-512 (Turtlecoin)   | 2.5% |
-| Chukwa-1024 (Turtlecoin)  | 2.5% |
-| x16r                      | 2.5% |
-| x16rv2                    | 2.5% |
-| x16s                      | 2.5% |
-| x16rt                     | 2.5% |
-| MTP                       | 2.5% |
-| Cuckatoo31                | 2.5% |
-| Cuckarood29               | 2.5% |
-| Lyra2rev3                 | 2.5% |
-| Lyra2z                    | 3.0% |
-| Phi2                      | 3.0% |
+|      GPU Algorithm            |  Fee |
+| ----------------------------- | ---- |
+| Ethash on Polaris GPUs        | 0.75%|
+| Ethash on all other GPUs      | 1.0% |
+| Kawpow                        | 2.0% |
+| Abel on Polaris, RDNA2/3      | 1.0% |
+| Abel on Vega, Navi10          | 2.0% |
+| Abel on VII, MI50/60/100s     | 3.0% |
+| Fishhash on Polaris, RDNA2/3  | 1.0% |
+| Fishhash on Vega, Navi10      | 2.0% |
+| Fishhash on VII, MI50/60/100s | 3.0% |
+| Verthash                      | 2.0% |
+| Autolykos2                    | 2.0% |
+| Ton                           | 1.0% |
+| Alephium                      | 1.0% |
+| Kaspa                         | 1.0% |
+| Karlsen                       | 1.0% |
+| Pyrin                         | 1.0% |
+| Ironfish                      | 1.0% |
+| Nimiq                         | 2.5% |
+| Cryptonight R                 | 2.5% |
+| Cryptonight v8 upx2           | 2.5% |
+| Cryptonight v8 turtle         | 2.5% |
+| Cryptonight v8 half           | 2.5% |
+| Cryptonight v8 double         | 2.5% |
+| Cryptonight v8 rwz            | 2.5% |
+| Cryptonight v8                | 2.5% |
+| Cryptonight heavy             | 2.5% |
+| Cryptonight haven             | 2.5% |
+| Cryptonight saber             | 2.5% |
+| Cryptonight conceal           | 2.5% |
+| Chukwa-512 (Turtlecoin)       | 2.5% |
+| Chukwa-1024 (Turtlecoin)      | 2.5% |
+| x16r                          | 2.5% |
+| x16rv2                        | 2.5% |
+| x16s                          | 2.5% |
+| x16rt                         | 2.5% |
+| MTP                           | 2.5% |
+| Cuckatoo31                    | 2.5% |
+| Cuckarood29                   | 2.5% |
+| Lyra2rev3                     | 2.5% |
+| Lyra2z                        | 3.0% |
+| Phi2                          | 3.0% |
 
 Some algorithms are not supported on some GPU architectures and/or drivers.  Below is the compatiblity table:
 
@@ -80,6 +83,7 @@ Some algorithms are not supported on some GPU architectures and/or drivers.  Bel
 | Ethash                   |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Kawpow                   |   N    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Abel                     |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
+| Fishhash                 |   N    |  Y   |  Y   |   N     |   N  |   N   |
 | Kawpow                   |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
 | Verthash                 |   Y    |  Y   |  Y   |   Y     |   Y  |   N   |
 | Autolykos2               |   Y    |  Y   |  Y   |   Y     |   Y  |   Y   |
@@ -172,6 +176,10 @@ For example command lines please see the batch/shell scripts in the miner downlo
 For command line options see the [USAGE.txt](USAGE.txt) file that comes with the miner.
 
 ## Release Notes
+### v0.10.21
+#### Changes
+- GPU: Added fishhash support for Vega family, Navi10 and Navi20 (use -a fishhash).
+
 ### v0.10.20
 #### Changes
 - FPGA: Added alephium bitstreams for E313, CVP13, and JC13.
